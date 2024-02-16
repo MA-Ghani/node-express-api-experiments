@@ -1,12 +1,14 @@
-var mongoose = require("mongoose");
-var Schema = mongoose.Schema;
+const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
 
-var AutoTelexSchema = new Schema(
-  {
-    incoming: { type: Object, required: true },
-  },
-  { timestamps: true }
+const autoTelexSchema = new Schema(
+	{
+		incoming: {
+			type: Object,
+			required: [true, "Data is required"],
+		},
+	},
+	{ timestamps: true }
 );
 
-// Export the model
-module.exports = mongoose.model("AutoTelex", AutoTelexSchema);
+module.exports = mongoose.model("autoTelex", autoTelexSchema);
